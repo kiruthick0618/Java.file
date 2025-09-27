@@ -1,0 +1,40 @@
+Take a number and return all the even digits of the number.
+
+Constraints:
+0 <= number <= 10000
+
+Input:
+A single integer is provided as input.
+Output:
+Return a list of even digits of the number, each digit in a new line.Return -1 in case there are no even digits
+
+Example:
+Input:
+1204
+Output:
+2
+0
+4
+// ANSWER
+import java.util.Scanner;
+
+public class EvenDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        sc.close();
+        String numStr = String.valueOf(number);
+        boolean foundEven = false;
+
+        for (int i = 0; i < numStr.length(); i++) {
+            int digit = numStr.charAt(i) - '0';
+            if (digit % 2 == 0) {
+                System.out.println(digit);
+                foundEven = true;
+            }
+        }
+        if (!foundEven) {
+            System.out.println(-1);
+        }
+    }
+}
