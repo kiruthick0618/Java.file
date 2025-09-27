@@ -1,0 +1,33 @@
+Take a integer as input and return the number of zeroes in the input.
+
+Constraints:
+0 < N <= 1000000
+
+Input:
+A single integer is provided as input.
+Output:
+Return the number of zeroes in the input integer.
+
+Example:
+Input:
+111127
+Output:
+0
+??ANSWER
+import java.util.Scanner;
+
+public class CountZeroes {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        String numberStr = String.valueOf(N);
+        int zeroCount = 0;
+        for (int i = 0; i < numberStr.length(); i++) {
+            if (numberStr.charAt(i) == '0') {
+                zeroCount++;
+            }
+        }
+        System.out.println(zeroCount);
+        scanner.close();
+    }
+}
