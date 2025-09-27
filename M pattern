@@ -1,0 +1,24 @@
+//M pattern
+import java.util.Scanner;
+
+public class MPattern {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of rows for the 'M' pattern: ");
+        int rows = sc.nextInt();
+        for (int i = 0; i < rows; i++) {
+            System.out.print("*"); 
+            for (int j = 1; j < rows - 1; j++) {
+                if ((j == i || j == rows - i - 1) && i <= rows / 2) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println("*"); 
+        }
+
+        sc.close();
+    }
+}
