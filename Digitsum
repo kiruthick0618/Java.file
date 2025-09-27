@@ -1,0 +1,30 @@
+Take a number as input and return the sum of all of its digits.
+
+Constraints:
+0 <= num <= 100000
+
+Input:
+A single integer is provided as input
+Output:
+Sum of all the digits of the number
+
+Example:
+Input:
+100
+Output:
+1
+//ANSWER
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int a = sc.nextInt();
+      int s=0;
+      while(a>0){
+      s+=(a%10);
+      a=(a/10);
+      }
+      System.out.println(s);
+  }
+}
