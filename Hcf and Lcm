@@ -1,0 +1,41 @@
+Question 1
+Max Score: 2 | Difficulty: Not Specified
+Write a program to take two integers as input and print the HCF and LCM of the two numbers.
+
+Constraints:
+0 <= a,b <= 100
+
+Input:
+Two integers, each in a new line.
+Output:
+First line of output contains HCF of the two numbers.
+Second line of output contains LCM of the two numbers.
+
+Example:
+Input:
+2
+3
+Output:
+1
+6
+//ANSWER
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int hcf = findHCF(a, b);
+        int lcm = (a == 0 || b == 0) ? 0 : (a * b) / hcf;
+        System.out.println(hcf);
+        System.out.println(lcm);
+    }
+    public static int findHCF(int x, int y) {
+        while (y != 0) {
+            int temp = y;
+            y = x % y;
+            x = temp;
+        }
+        return x;
+    }
+}
