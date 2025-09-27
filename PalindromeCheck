@@ -1,0 +1,50 @@
+Take an integer an return 'YES' if the input is a palindrome, or 'NO' if it is not.
+
+Hint:
+Palindrome is a word, phrase, or sequence that reads the same backward as forward.
+Example: madam
+nurses run
+12321
+
+Constraints:
+1 <= N <= 100000
+
+Input:
+A single integer N
+Output:
+A single line of output, either 'YES' or 'NO'
+
+Example:
+Input:
+1221
+Output:
+YES
+//ANSWER
+import java.util.Scanner;
+
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        sc.close();
+
+        if (isPalindrome(N)) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+
+    private static boolean isPalindrome(int num) {
+        int original = num;
+        int reversed = 0;
+
+        while (num > 0) {
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+            num /= 10;
+        }
+
+        return original == reversed;
+    }
+}
