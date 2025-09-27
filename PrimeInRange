@@ -1,0 +1,45 @@
+Take two integers as input and return all the prime numbers in between them (exclusive range).
+
+Constraints:
+0 < a < b < 10000
+
+Input:
+Two integers a,b input in two separate lines
+Output:
+All prime numbers in between a and b (both exclusive), each in a new line.
+
+Example:
+Input:
+2
+10
+Output:
+3
+5
+7
+//ANSWERS
+import java.util.Scanner;
+
+public class PrimeInRange {
+    public static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        if (n == 2) return true;
+        if (n % 2 == 0) return false;
+        for (int i = 3; i <= Math.sqrt(n); i += 2) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        for (int i = a + 1; i < b; i++) {
+            if (isPrime(i)) {
+                System.out.println(i);
+            }
+        }
+        sc.close();
+    }
+}
