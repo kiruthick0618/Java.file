@@ -1,0 +1,33 @@
+Take two numbers a,b and return the bigger number.
+
+Constraints:
+0 <= a,b <= 1000
+
+Input:
+Two numbers - a,b each in a new line
+Output:
+Bigger number about a,b
+
+Example:
+
+Input:
+3
+5
+Output:
+5
+//ANSWER
+import java.util.*;
+
+public class Bigger {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        if (a > b) {
+            System.out.println(a);
+        } else {
+            System.out.println(b);
+        }
+        sc.close();
+    }
+}
